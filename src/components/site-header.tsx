@@ -75,7 +75,7 @@ export function SiteHeader() {
             <Link
               key={link.label}
               to={link.to}
-              hash={link.hash}
+              {...(link.hash ? { hash: link.hash } : {})}
               onClick={() => setOpen(false)}
               className="block rounded-xl px-3 py-3 text-base font-semibold text-foreground no-underline hover:bg-card"
             >

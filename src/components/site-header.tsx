@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Link } from "@tanstack/react-router";
 
-const NAV_LINKS = [
+type NavLink = { label: string; to: "/" | "/donate" | "/apply" | "/partner"; hash?: string };
+
+const NAV_LINKS: NavLink[] = [
   { label: "Our work", to: "/", hash: "programmes" },
   { label: "Donate", to: "/donate" },
   { label: "Apply for support", to: "/apply" },
   { label: "Partner", to: "/partner" },
-] as const;
+];
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);

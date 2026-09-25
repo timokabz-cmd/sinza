@@ -42,7 +42,7 @@ export function SiteHeader() {
             <Link
               key={link.label}
               to={link.to}
-              hash={link.hash}
+              {...(link.hash ? { hash: link.hash } : {})}
               className="rounded-full px-4 py-2 text-sm font-semibold text-muted-foreground no-underline transition-colors hover:bg-card hover:text-foreground"
               activeProps={{ className: "bg-card text-foreground" }}
             >

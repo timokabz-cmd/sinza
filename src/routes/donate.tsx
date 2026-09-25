@@ -109,7 +109,7 @@ function DonatePage() {
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               Thank you for choosing to give. Our team will reach out shortly
-              to confirm your gift of {TIERS[selected].amount} and how it will
+              to confirm your gift of {TIERS[selected]?.amount ?? "your chosen level"} and how it will
               be put to work.
             </p>
           </div>
@@ -138,7 +138,7 @@ function DonatePage() {
               </label>
             </div>
             <button type="submit" className="btn-gold mt-6 w-full">
-              Continue — give {TIERS[selected].amount}
+              Continue — give {TIERS[selected]?.amount ?? "your chosen level"}
             </button>
           </form>
         )}

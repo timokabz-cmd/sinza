@@ -56,7 +56,7 @@ function Index() {
         />
         <div className="mx-auto max-w-6xl px-4 pb-20 pt-20 text-primary-foreground sm:px-6 sm:pb-28 sm:pt-28">
           <div className="rise-in max-w-2xl">
-            <p className="eyebrow">Women-led · Wakiso/Kampala, Uganda</p>
+            <p className="eyebrow-on-photo">Women-led · Wakiso/Kampala, Uganda</p>
             <h1 className="mt-4 font-display text-4xl font-medium leading-[1.08] tracking-tight sm:text-6xl">
               Improving lives.
               <br />

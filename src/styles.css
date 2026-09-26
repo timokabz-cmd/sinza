@@ -3,9 +3,10 @@
 @import "tw-animate-css";
 
 /*
- * Sinza design system — Emerald Prestige.
- * Deep emerald ground, gold punctuation, warm ivory paper.
- * Display type: Lora (serif). Body: Nunito Sans.
+ * Sinza design system — Emerald & Berry (refined from brand logo).
+ * Deep botanical green ground, muted berry/rose punctuation, warm ivory paper.
+ * Refined, desaturated versions of the logo's lime-green + magenta for a
+ * premium, non-garish feel. Display type: Lora (serif). Body: Nunito Sans.
  * All colors defined here as oklch semantic tokens.
  */
 
@@ -53,29 +54,29 @@
 :root {
   --radius: 0.75rem;
   --background: oklch(0.951 0.021 96);          /* warm ivory #f5f0e0 */
-  --foreground: oklch(0.26 0.035 168);          /* deep green-black ink */
+  --foreground: oklch(0.26 0.04 155);           /* deep green-black ink */
   --card: oklch(0.982 0.012 96);                /* lighter ivory for cards */
-  --card-foreground: oklch(0.26 0.035 168);
+  --card-foreground: oklch(0.26 0.04 155);
   --popover: oklch(0.982 0.012 96);
-  --popover-foreground: oklch(0.26 0.035 168);
-  --primary: oklch(0.36 0.078 168);             /* deep emerald #064e3b */
-  --primary-foreground: oklch(0.951 0.021 96);
-  --secondary: oklch(0.9 0.045 156);            /* soft sage-emerald */
-  --secondary-foreground: oklch(0.3 0.06 168);
+  --popover-foreground: oklch(0.26 0.04 155);
+  --primary: oklch(0.32 0.075 152);             /* deep botanical green, logo-inspired */
+  --primary-foreground: oklch(0.97 0.015 96);
+  --secondary: oklch(0.9 0.05 148);             /* soft sage-green */
+  --secondary-foreground: oklch(0.3 0.06 155);
   --muted: oklch(0.915 0.03 100);               /* deeper ivory */
-  --muted-foreground: oklch(0.45 0.03 165);
-  --accent: oklch(0.75 0.108 86);               /* gold #c9a84c */
-  --accent-foreground: oklch(0.26 0.06 168);
+  --muted-foreground: oklch(0.45 0.03 150);
+  --accent: oklch(0.52 0.16 6);                 /* muted berry/rose, logo-inspired */
+  --accent-foreground: oklch(0.97 0.015 96);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.87 0.03 100);
   --input: oklch(0.87 0.03 100);
-  --ring: oklch(0.75 0.108 86);
+  --ring: oklch(0.52 0.16 6);
 
-  --emerald-deep: oklch(0.36 0.078 168);        /* #064e3b */
-  --emerald-brand: oklch(0.5 0.095 168);        /* #0d7a5f */
-  --gold: oklch(0.75 0.108 86);                 /* #c9a84c */
-  --gold-soft: oklch(0.87 0.085 88);            /* #f0d78c-ish */
+  --emerald-deep: oklch(0.32 0.075 152);        /* deep botanical green */
+  --emerald-brand: oklch(0.46 0.095 150);       /* mid green */
+  --gold: oklch(0.52 0.16 6);                   /* muted berry/rose (kept token name for compat) */
+  --gold-soft: oklch(0.68 0.13 8);              /* soft rose, for hovers */
   --ivory: oklch(0.951 0.021 96);
   --ivory-soft: oklch(0.925 0.03 98);
 }

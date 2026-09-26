@@ -3,6 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import feedingImg from "@/assets/programme-feeding.jpg";
 import capitalImg from "@/assets/programme-capital.jpg";
 import storyImg from "@/assets/story-mother.jpg";
+import corsuLead from "@/assets/outreach/corsu/corsu-01-playtable.jpg";
 
 export const Route = createFileRoute("/impact")({
   head: () => ({
@@ -95,7 +96,19 @@ function ImpactPage() {
           <h2 className="mt-3 font-display text-3xl font-medium tracking-tight sm:text-4xl">Where we've been</h2>
           <div className="gold-rule mt-5" />
         </div>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <Link to="/programs/$slug" params={{ slug: "hiv-aids-prevention" }} className="card-panel block overflow-hidden no-underline">
+            <img src={corsuLead} alt="SINZA volunteers and CoRSU staff playing with children at CoRSU Hospital" loading="lazy" width={1080} height={720} className="aspect-[4/3] w-full object-cover" />
+            <div className="p-6 sm:p-8">
+              <p className="eyebrow">CoRSU Hospital</p>
+              <h3 className="mt-2 font-display text-2xl font-medium tracking-tight">A day of care and play</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                Alongside CoRSU's own staff, we spent the day with patients —
+                sharing food, games and company on the ward.
+              </p>
+              <p className="mt-4 text-sm font-bold text-primary">See the full gallery →</p>
+            </div>
+          </Link>
           <article className="card-panel overflow-hidden">
             <img src={feedingImg} alt="Food distribution to families" loading="lazy" width={1200} height={912} className="aspect-[4/3] w-full object-cover" />
             <div className="p-6 sm:p-8">
@@ -187,4 +200,4 @@ function ImpactPage() {
       </section>
     </>
   );
-              }
+}

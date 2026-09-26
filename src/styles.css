@@ -43,6 +43,7 @@
   --color-emerald-brand: var(--emerald-brand);
   --color-gold: var(--gold);
   --color-gold-soft: var(--gold-soft);
+  --color-gold-on-dark: var(--gold-on-dark);
   --color-ivory: var(--ivory);
   --color-ivory-soft: var(--ivory-soft);
 
@@ -65,18 +66,19 @@
   --secondary-foreground: oklch(0.3 0.06 155);
   --muted: oklch(0.915 0.03 100);               /* deeper ivory */
   --muted-foreground: oklch(0.45 0.03 150);
-  --accent: oklch(0.52 0.16 6);                 /* muted berry/rose, logo-inspired */
+  --accent: oklch(0.4 0.17 6);                  /* deep berry/rose, logo-inspired */
   --accent-foreground: oklch(0.97 0.015 96);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
   --border: oklch(0.87 0.03 100);
   --input: oklch(0.87 0.03 100);
-  --ring: oklch(0.52 0.16 6);
+  --ring: oklch(0.4 0.17 6);
 
   --emerald-deep: oklch(0.32 0.075 152);        /* deep botanical green */
   --emerald-brand: oklch(0.46 0.095 150);       /* mid green */
-  --gold: oklch(0.52 0.16 6);                   /* muted berry/rose (kept token name for compat) */
-  --gold-soft: oklch(0.68 0.13 8);              /* soft rose, for hovers */
+  --gold: oklch(0.4 0.17 6);                    /* deep berry/rose (kept token name for compat) */
+  --gold-soft: oklch(0.58 0.15 7);              /* mid rose, for hovers */
+  --gold-on-dark: oklch(0.72 0.12 9);           /* light rose, for eyebrow text on dark/photo backgrounds */
   --ivory: oklch(0.951 0.021 96);
   --ivory-soft: oklch(0.925 0.03 98);
 }
@@ -111,6 +113,17 @@
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--gold);
+}
+
+/* For eyebrow text sitting on top of a photo (e.g. hero) — lighter rose + shadow for legibility */
+@utility eyebrow-on-photo {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-on-dark);
+  text-shadow: 0 1px 6px color-mix(in oklab, var(--emerald-deep) 85%, black);
 }
 
 @utility btn-primary {
@@ -260,4 +273,4 @@
     opacity: 1;
     transform: none;
   }
-}
+    }

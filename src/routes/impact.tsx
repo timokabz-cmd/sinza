@@ -4,6 +4,7 @@ import feedingImg from "@/assets/programme-feeding.jpg";
 import capitalImg from "@/assets/programme-capital.jpg";
 import storyImg from "@/assets/story-mother.jpg";
 import corsuLead from "@/assets/outreach/corsu/corsu-01-playtable.jpg";
+import sickleCellHomeVisit from "@/assets/outreach/sickle-cell/sicklecell-03-home-visit.jpg";
 
 export const Route = createFileRoute("/impact")({
   head: () => ({
@@ -46,6 +47,7 @@ const STORIES = [
 const OUTREACHES = [
   "BATWA Kisoro (2018)",
   "CoRSU Hospital (2021)",
+  "Sickle Cell Care Foundation, Kampala (2021)",
   "ZOE Foundation Orphanage (2021)",
   "Kiryagonja Widows (2021)",
   "Katanga Slum (2022)",
@@ -96,7 +98,7 @@ function ImpactPage() {
           <h2 className="mt-3 font-display text-3xl font-medium tracking-tight sm:text-4xl">Where we've been</h2>
           <div className="gold-rule mt-5" />
         </div>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2">
           <Link to="/programs/$slug" params={{ slug: "hiv-aids-prevention" }} className="card-panel block overflow-hidden no-underline">
             <img src={corsuLead} alt="SINZA volunteers and CoRSU staff playing with children at CoRSU Hospital" loading="lazy" width={1080} height={720} className="aspect-[4/3] w-full object-cover" />
             <div className="p-6 sm:p-8">
@@ -109,6 +111,18 @@ function ImpactPage() {
               <p className="mt-4 text-sm font-bold text-primary">See the full gallery →</p>
             </div>
           </Link>
+          <article className="card-panel overflow-hidden">
+            <img src={sickleCellHomeVisit} alt="A SINZA volunteer visiting a mother and her son at their home, supported by the Sickle Cell Care Foundation" loading="lazy" width={486} height={1080} className="aspect-[4/3] w-full object-cover object-top" />
+            <div className="p-6 sm:p-8">
+              <p className="eyebrow">2021 · Kampala</p>
+              <h3 className="mt-2 font-display text-2xl font-medium tracking-tight">Standing with sickle cell families</h3>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                Working with the Sickle Cell Care Foundation, we delivered food
+                supplies to the foundation's Kampala office and visited families
+                at home to check in on their children.
+              </p>
+            </div>
+          </article>
           <article className="card-panel overflow-hidden">
             <img src={feedingImg} alt="Food distribution to families" loading="lazy" width={1200} height={912} className="aspect-[4/3] w-full object-cover" />
             <div className="p-6 sm:p-8">
@@ -200,4 +214,4 @@ function ImpactPage() {
       </section>
     </>
   );
-}
+                     }

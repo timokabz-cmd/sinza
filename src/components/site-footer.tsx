@@ -19,8 +19,14 @@ export function SiteFooter() {
           </div>
           <nav className="flex min-w-0 flex-col gap-3" aria-label="Footer">
             <p className="eyebrow !text-gold-soft">Explore</p>
-            <Link to="/" hash="programmes" className="text-sm font-semibold text-primary-foreground/80 no-underline hover:text-gold-soft">
-              Our focus
+            <Link to="/about" className="text-sm font-semibold text-primary-foreground/80 no-underline hover:text-gold-soft">
+              About us
+            </Link>
+            <Link to="/programs" className="text-sm font-semibold text-primary-foreground/80 no-underline hover:text-gold-soft">
+              Our programmes
+            </Link>
+            <Link to="/impact" className="text-sm font-semibold text-primary-foreground/80 no-underline hover:text-gold-soft">
+              Our impact
             </Link>
             <Link to="/donate" className="text-sm font-semibold text-primary-foreground/80 no-underline hover:text-gold-soft">
               Donate

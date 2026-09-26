@@ -4,6 +4,8 @@ import feedingImg from "@/assets/programme-feeding.jpg";
 import capitalImg from "@/assets/programme-capital.jpg";
 import storyImg from "@/assets/story-mother.jpg";
 import corsuLead from "@/assets/outreach/corsu/corsu-01-playtable.jpg";
+import sickleCellDelivery from "@/assets/outreach/sickle-cell/sicklecell-01-delivery.jpg";
+import sickleCellOffice from "@/assets/outreach/sickle-cell/sicklecell-02-foundation-office.jpg";
 import sickleCellHomeVisit from "@/assets/outreach/sickle-cell/sicklecell-03-home-visit.jpg";
 
 export const Route = createFileRoute("/impact")({
@@ -64,6 +66,12 @@ const PARTNERS = [
   "Mulago National Referral Hospital",
 ];
 
+const SICKLE_CELL_GALLERY = [
+  { src: sickleCellDelivery, alt: "A SINZA volunteer carrying matooke and supplies to deliver to the Sickle Cell Care Foundation" },
+  { src: sickleCellOffice, alt: "SINZA volunteers with food and supplies outside the Sickle Cell Care Foundation office in Kampala" },
+  { src: sickleCellHomeVisit, alt: "A SINZA volunteer visiting a mother and her son at their home, supported by the Sickle Cell Care Foundation" },
+];
+
 function ImpactPage() {
   return (
     <>
@@ -111,7 +119,7 @@ function ImpactPage() {
               <p className="mt-4 text-sm font-bold text-primary">See the full gallery →</p>
             </div>
           </Link>
-          <article className="card-panel overflow-hidden">
+          <a href="#sickle-cell-gallery" className="card-panel block overflow-hidden no-underline">
             <img src={sickleCellHomeVisit} alt="A SINZA volunteer visiting a mother and her son at their home, supported by the Sickle Cell Care Foundation" loading="lazy" width={486} height={1080} className="aspect-[4/3] w-full object-cover object-top" />
             <div className="p-6 sm:p-8">
               <p className="eyebrow">2021 · Kampala</p>
@@ -121,8 +129,9 @@ function ImpactPage() {
                 supplies to the foundation's Kampala office and visited families
                 at home to check in on their children.
               </p>
+              <p className="mt-4 text-sm font-bold text-primary">See the full gallery →</p>
             </div>
-          </article>
+          </a>
           <article className="card-panel overflow-hidden">
             <img src={feedingImg} alt="Food distribution to families" loading="lazy" width={1200} height={912} className="aspect-[4/3] w-full object-cover" />
             <div className="p-6 sm:p-8">
@@ -146,7 +155,28 @@ function ImpactPage() {
             </div>
           </article>
         </div>
-        <div className="mt-10">
+        <div id="sickle-cell-gallery" className="mt-14 scroll-mt-24">
+          <p className="eyebrow">In the field</p>
+          <h3 className="mt-3 font-display text-2xl font-medium tracking-tight sm:text-3xl">
+            Standing with sickle cell families
+          </h3>
+          <div className="gold-rule mt-5" />
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
+            {SICKLE_CELL_GALLERY.map((img, i) => (
+              <img
+                key={img.src}
+                src={img.src}
+                alt={img.alt}
+                loading="lazy"
+                className={`aspect-[4/3] w-full rounded-2xl object-cover shadow-md ${
+                  i === 0 ? "col-span-2 aspect-[16/10] sm:col-span-1 sm:aspect-[4/3]" : ""
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-14">
           <p className="eyebrow">Key outreaches</p>
           <ul className="mt-4 flex flex-wrap gap-2">
             {OUTREACHES.map((o) => (
@@ -214,4 +244,4 @@ function ImpactPage() {
       </section>
     </>
   );
-                     }
+}

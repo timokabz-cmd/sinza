@@ -1,3 +1,8 @@
+export type GalleryImage = {
+  src: string;
+  alt: string;
+};
+
 export type Program = {
   slug: string;
   number: string;
@@ -7,6 +12,9 @@ export type Program = {
   details: string[];
   /** Placeholder image key — swap for a real photo import once available. */
   imageKey: "feeding" | "capital" | "story" | "hero" | null;
+  /** Real outreach photos for this programme, set from src/routes/programs/$slug.tsx. */
+  gallery?: GalleryImage[];
+  galleryCaption?: string;
 };
 
 export const PROGRAMS: Program[] = [
@@ -39,6 +47,7 @@ export const PROGRAMS: Program[] = [
       "Partnership with CoRSU and Mulago National Referral Hospital for specialist referrals.",
     ],
     imageKey: null,
+    galleryCaption: "From our visit to CoRSU Hospital",
   },
   {
     slug: "gender-based-violence-prevention",
@@ -89,4 +98,4 @@ export const PROGRAMS: Program[] = [
 
 export function getProgramBySlug(slug: string): Program | undefined {
   return PROGRAMS.find((p) => p.slug === slug);
-    }
+}

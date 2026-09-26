@@ -7,6 +7,11 @@ import corsuLead from "@/assets/outreach/corsu/corsu-01-playtable.jpg";
 import sickleCellDelivery from "@/assets/outreach/sickle-cell/sicklecell-01-delivery.jpg";
 import sickleCellOffice from "@/assets/outreach/sickle-cell/sicklecell-02-foundation-office.jpg";
 import sickleCellHomeVisit from "@/assets/outreach/sickle-cell/sicklecell-03-home-visit.jpg";
+import katoogoRiceSacks from "@/assets/outreach/katoogo/katoogo-01-rice-sacks.jpg";
+import katoogoLoadingTruck from "@/assets/outreach/katoogo/katoogo-02-loading-truck.jpg";
+import katoogoTruckLoaded from "@/assets/outreach/katoogo/katoogo-03-truck-loaded.jpg";
+import katoogoCommunity from "@/assets/outreach/katoogo/katoogo-04-community-gathering.jpg";
+import katoogoPodium from "@/assets/outreach/katoogo/katoogo-05-podium.jpg";
 
 export const Route = createFileRoute("/impact")({
   head: () => ({
@@ -72,6 +77,14 @@ const SICKLE_CELL_GALLERY = [
   { src: sickleCellHomeVisit, alt: "A SINZA volunteer visiting a mother and her son at their home, supported by the Sickle Cell Care Foundation" },
 ];
 
+const KATOOGO_GALLERY = [
+  { src: katoogoRiceSacks, alt: "Sacks of rice ready for distribution to families in Katoogo" },
+  { src: katoogoLoadingTruck, alt: "Volunteers loading a truck with rice and supplies for the Katoogo outreach" },
+  { src: katoogoTruckLoaded, alt: "A truck loaded with sacks of rice and supplies ready for the Katoogo outreach" },
+  { src: katoogoCommunity, alt: "Families gathered at the Feed the Streets Foundation event in Katoogo" },
+  { src: katoogoPodium, alt: "SINZA and Feed the Streets Foundation leaders speaking at the Katoogo outreach event" },
+];
+
 function ImpactPage() {
   return (
     <>
@@ -132,8 +145,8 @@ function ImpactPage() {
               <p className="mt-4 text-sm font-bold text-primary">See the full gallery →</p>
             </div>
           </a>
-          <article className="card-panel overflow-hidden">
-            <img src={feedingImg} alt="Food distribution to families" loading="lazy" width={1200} height={912} className="aspect-[4/3] w-full object-cover" />
+          <a href="#katoogo-gallery" className="card-panel block overflow-hidden no-underline">
+            <img src={katoogoRiceSacks} alt="Sacks of rice ready for distribution to families in Katoogo" loading="lazy" width={765} height={1020} className="aspect-[4/3] w-full object-cover object-top" />
             <div className="p-6 sm:p-8">
               <p className="eyebrow">Nov 2025 · Katoogo</p>
               <h3 className="mt-2 font-display text-2xl font-medium tracking-tight">200kg of rice with Feed the Streets</h3>
@@ -141,8 +154,9 @@ function ImpactPage() {
                 Together with Feed the Streets Foundation, we distributed 200kg of
                 rice to families in Katoogo.
               </p>
+              <p className="mt-4 text-sm font-bold text-primary">See the full gallery →</p>
             </div>
-          </article>
+          </a>
           <article className="card-panel overflow-hidden">
             <img src={capitalImg} alt="A woman at her market stall" loading="lazy" width={1200} height={912} className="aspect-[4/3] w-full object-cover" />
             <div className="p-6 sm:p-8">
@@ -163,6 +177,27 @@ function ImpactPage() {
           <div className="gold-rule mt-5" />
           <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
             {SICKLE_CELL_GALLERY.map((img, i) => (
+              <img
+                key={img.src}
+                src={img.src}
+                alt={img.alt}
+                loading="lazy"
+                className={`aspect-[4/3] w-full rounded-2xl object-cover shadow-md ${
+                  i === 0 ? "col-span-2 aspect-[16/10] sm:col-span-1 sm:aspect-[4/3]" : ""
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div id="katoogo-gallery" className="mt-14 scroll-mt-24">
+          <p className="eyebrow">In the field</p>
+          <h3 className="mt-3 font-display text-2xl font-medium tracking-tight sm:text-3xl">
+            200kg of rice with Feed the Streets
+          </h3>
+          <div className="gold-rule mt-5" />
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4">
+            {KATOOGO_GALLERY.map((img, i) => (
               <img
                 key={img.src}
                 src={img.src}
@@ -244,4 +279,4 @@ function ImpactPage() {
       </section>
     </>
   );
-}
+          }

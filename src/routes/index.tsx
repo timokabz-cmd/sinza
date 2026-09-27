@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-import heroImg from "@/assets/hero.jpg";
-import storyImg from "@/assets/story-mother.jpg";
+import heroImg from "@/assets/outreach/corsu/corsu-05-team.jpg";
+import storyImg from "@/assets/outreach/corsu/corsu-02-feeding.jpg";
 import { PROGRAMS } from "@/lib/programs";
 
 export const Route = createFileRoute("/")({
@@ -41,9 +41,9 @@ function Index() {
       <section className="relative isolate overflow-hidden">
         <img
           src={heroImg}
-          alt="Ugandan women gathered under a tree at golden hour"
-          width={1536}
-          height={1024}
+          alt="Two SINZA outreach volunteers in branded vests at CoRSU Hospital"
+          width={1080}
+          height={720}
           className="absolute inset-0 -z-10 h-full w-full object-cover"
         />
         <div
@@ -153,7 +153,7 @@ function Index() {
       {/* One story */}
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
         <div className="grid items-center gap-8 sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] sm:gap-12">
-          <img src={storyImg} alt="A smiling Ugandan mother" loading="lazy" width={1024} height={1024} className="aspect-square w-full rounded-3xl object-cover shadow-xl" />
+          <img src={storyImg} alt="A SINZA volunteer sharing food with a mother and her baby at CoRSU Hospital" loading="lazy" width={1080} height={720} className="aspect-square w-full rounded-3xl object-cover shadow-xl" />
           <div className="min-w-0">
             <p className="eyebrow">Why our work matters</p>
             <h2 className="mt-3 font-display text-3xl font-medium tracking-tight sm:text-4xl">Lived evidence</h2>

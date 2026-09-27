@@ -1,22 +1,20 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getProgramBySlug, PROGRAMS, type GalleryImage } from "@/lib/programs";
 
-import feedingImg from "@/assets/programme-feeding.jpg";
 import capitalImg from "@/assets/programme-capital.jpg";
-import storyImg from "@/assets/story-mother.jpg";
-import heroImg from "@/assets/hero.jpg";
 
 import corsuPlaytable from "@/assets/outreach/corsu/corsu-01-playtable.jpg";
 import corsuFeeding from "@/assets/outreach/corsu/corsu-02-feeding.jpg";
 import corsuWardVisit from "@/assets/outreach/corsu/corsu-03-ward-visit.jpg";
 import corsuPlayMat from "@/assets/outreach/corsu/corsu-04-play-mat.jpg";
 import corsuTeam from "@/assets/outreach/corsu/corsu-05-team.jpg";
+import katoogoRiceSacks from "@/assets/outreach/katoogo/katoogo-01-rice-sacks.jpg";
+import sickleCellHomeVisit from "@/assets/outreach/sickle-cell/sicklecell-03-home-visit.jpg";
 
 const IMAGES = {
-  feeding: feedingImg,
+  feeding: katoogoRiceSacks,
   capital: capitalImg,
-  story: storyImg,
-  hero: heroImg,
+  story: sickleCellHomeVisit,
 };
 
 /** Real outreach photo galleries, keyed by programme slug. */
@@ -155,4 +153,4 @@ function ProgramDetail() {
       </section>
     </>
   );
-}
+        }

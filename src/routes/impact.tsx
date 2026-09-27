@@ -1,8 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-import feedingImg from "@/assets/programme-feeding.jpg";
 import capitalImg from "@/assets/programme-capital.jpg";
-import storyImg from "@/assets/story-mother.jpg";
+import storyImg from "@/assets/outreach/corsu/corsu-03-ward-visit.jpg";
 import corsuLead from "@/assets/outreach/corsu/corsu-01-playtable.jpg";
 import sickleCellDelivery from "@/assets/outreach/sickle-cell/sicklecell-01-delivery.jpg";
 import sickleCellOffice from "@/assets/outreach/sickle-cell/sicklecell-02-foundation-office.jpg";
@@ -225,7 +224,7 @@ function ImpactPage() {
       <section className="bg-ivory-soft">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
           <div className="grid items-start gap-8 sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] sm:gap-12">
-            <img src={storyImg} alt="A smiling Ugandan mother" loading="lazy" width={1024} height={1024} className="aspect-square w-full rounded-3xl object-cover shadow-xl" />
+            <img src={storyImg} alt="SINZA volunteers visiting a young patient in a CoRSU Hospital ward" loading="lazy" width={1080} height={720} className="aspect-square w-full rounded-3xl object-cover shadow-xl" />
             <div className="min-w-0">
               <p className="eyebrow">Why our work matters</p>
               <h2 className="mt-3 font-display text-3xl font-medium tracking-tight sm:text-4xl">Lived evidence</h2>
@@ -279,4 +278,4 @@ function ImpactPage() {
       </section>
     </>
   );
-          }
+  }

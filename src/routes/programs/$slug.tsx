@@ -142,13 +142,22 @@ function ProgramDetail() {
       <section className="bg-ivory-soft">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-14">
           <p className="eyebrow">Next</p>
-          <Link
-            to="/programs/$slug"
-            params={{ slug: next.slug }}
-            className="mt-2 block font-display text-2xl font-medium tracking-tight text-foreground no-underline hover:text-primary sm:text-3xl"
-          >
-            {next.title} →
-          </Link>
+          {next ? (
+            <Link
+              to="/programs/$slug"
+              params={{ slug: next.slug }}
+              className="mt-2 block font-display text-2xl font-medium tracking-tight text-foreground no-underline hover:text-primary sm:text-3xl"
+            >
+              {next.title} →
+            </Link>
+          ) : (
+            <Link
+              to="/programs"
+              className="mt-2 block font-display text-2xl font-medium tracking-tight text-foreground no-underline hover:text-primary sm:text-3xl"
+            >
+              All programmes →
+            </Link>
+          )}
         </div>
       </section>
     </>

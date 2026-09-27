@@ -94,6 +94,22 @@ export const PROGRAMS: Program[] = [
     ],
     imageKey: "feeding",
   },
+  {
+    slug: "health-and-emergency-response",
+    number: "06",
+    title: "Health & Emergency Response",
+    shortBody:
+      "Rapid, hands-on support for families facing a sudden health crisis.",
+    heroBody:
+      "Some needs can't wait. When a family is hit by a medical emergency, we step in quickly with practical, on-the-ground support — because a crisis is not the moment to be left alone.",
+    details: [
+      "Rapid-response support for families facing sudden or high-risk medical situations.",
+      "Practical help with essentials during hospital stays and recovery.",
+      "Ongoing follow-up after the emergency has passed, so support doesn't end too soon.",
+    ],
+    imageKey: null,
+    galleryCaption: "Responding to a mother of quadruplets in Mbale",
+  },
 ];
 
 export function getProgramBySlug(slug: string): Program | undefined {

@@ -11,7 +11,7 @@ export type Program = {
   heroBody: string;
   details: string[];
   /** Placeholder image key — swap for a real photo import once available. */
-  imageKey: "feeding" | "capital" | "story" | "hero" | null;
+  imageKey: "feeding" | "capital" | "story" | null;
   /** Real outreach photos for this programme, set from src/routes/programs/$slug.tsx. */
   gallery?: GalleryImage[];
   galleryCaption?: string;

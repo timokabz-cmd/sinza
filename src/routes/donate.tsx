@@ -44,13 +44,37 @@ const TIERS = [
   },
 ];
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xjykddko";
+
 function DonatePage() {
   const [selected, setSelected] = useState(1);
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSent(true);
+    setSubmitting(true);
+    setError(false);
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    formData.set("giving_level", TIERS[selected]?.amount ?? "Not specified");
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+      if (response.ok) {
+        setSent(true);
+      } else {
+        setError(true);
+      }
+    } catch {
+      setError(true);
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -137,12 +161,19 @@ function DonatePage() {
                 <textarea name="message" rows={3} placeholder="Optional message" className="field resize-none" />
               </label>
             </div>
-            <button type="submit" className="btn-gold mt-6 w-full">
-              Continue — give {TIERS[selected]?.amount ?? "your chosen level"}
+            {error && (
+              <p className="mt-4 text-sm font-semibold text-destructive">
+                Something went wrong sending your details. Please try again, or
+                reach us directly at{" "}
+                <a href="mailto:info@sinza.ug" className="underline">info@sinza.ug</a>.
+              </p>
+            )}
+            <button type="submit" disabled={submitting} className="btn-gold mt-6 w-full disabled:opacity-60">
+              {submitting ? "Sending…" : `Continue — give ${TIERS[selected]?.amount ?? "your chosen level"}`}
             </button>
           </form>
         )}
       </section>
     </>
   );
-}
+              }

@@ -40,12 +40,34 @@ const WAYS = [
   },
 ];
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/moevzzvo";
+
 function PartnerPage() {
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSent(true);
+    setSubmitting(true);
+    setError(false);
+    const formData = new FormData(event.currentTarget);
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+      if (response.ok) {
+        setSent(true);
+      } else {
+        setError(true);
+      }
+    } catch {
+      setError(true);
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -125,12 +147,19 @@ function PartnerPage() {
                 />
               </label>
             </div>
-            <button type="submit" className="btn-gold mt-6 w-full">
-              Send message
+            {error && (
+              <p className="mt-4 text-sm font-semibold text-destructive">
+                Something went wrong sending your message. Please try again, or
+                reach us directly at{" "}
+                <a href="mailto:info@sinza.ug" className="underline">info@sinza.ug</a>.
+              </p>
+            )}
+            <button type="submit" disabled={submitting} className="btn-gold mt-6 w-full disabled:opacity-60">
+              {submitting ? "Sending…" : "Send message"}
             </button>
           </form>
         )}
       </section>
     </>
   );
-}
+              }

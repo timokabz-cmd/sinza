@@ -53,10 +53,10 @@ const PROGRAM_THUMBS: Record<string, string> = {
 function Index() {
   return (
     <>
-      {/* Chapter 1 — Hero */}
-      <section className="flex min-h-[100svh] flex-col justify-center bg-primary px-4 pb-16 pt-12 text-primary-foreground sm:px-6">
-        <div className="mx-auto w-full max-w-2xl">
-          <p className="font-display text-sm italic text-primary-foreground/55">Chapter 01 — Who we are</p>
+      {/* 1 — Hero */}
+      <section className="flex min-h-[100svh] flex-col bg-primary px-4 py-12 text-primary-foreground sm:px-6 sm:py-16">
+        <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col justify-center">
+          <p className="font-display text-base font-medium italic text-gold-soft sm:text-lg">Who we are</p>
           <h1 className="mt-4 font-display text-4xl font-medium leading-[1.02] tracking-tight sm:text-6xl">
             Improving lives.
             <br />
@@ -72,12 +72,12 @@ function Index() {
             <Link to="/apply" className="btn-outline-light">Apply for support</Link>
           </div>
         </div>
-        <p className="mx-auto mt-16 w-full max-w-2xl text-[11px] font-bold uppercase tracking-[0.12em] text-primary-foreground/45">
+        <p className="mx-auto w-full max-w-2xl text-[11px] font-bold uppercase tracking-[0.12em] text-primary-foreground/45">
           Scroll to continue ↓
         </p>
       </section>
 
-      {/* Chapter 2 — Photo takeover */}
+      {/* 2 — Photo takeover */}
       <section className="relative isolate flex min-h-[100svh] items-end overflow-hidden">
         <img
           src={heroImg}
@@ -96,22 +96,23 @@ function Index() {
         />
         <div className="w-full px-4 pb-10 pt-24 text-primary-foreground sm:px-6 sm:pb-14">
           <div className="mx-auto max-w-2xl">
-            <p className="font-display text-sm italic text-primary-foreground/75">Chapter 02 — Where we work</p>
-            <h2 className="mt-2 max-w-[16ch] font-display text-2xl font-medium tracking-tight sm:text-4xl">
-              CoRSU Hospital, Kampala
+            <p className="font-display text-base font-medium italic text-gold-soft sm:text-lg">Where we work</p>
+            <h2 className="mt-2 max-w-[20ch] font-display text-2xl font-medium tracking-tight sm:text-4xl">
+              Wakiso and Kampala, one community at a time
             </h2>
-            <p className="mt-3 max-w-[36ch] text-sm leading-relaxed text-primary-foreground/90 sm:text-base">
-              Alongside CoRSU's own staff, we spent the day with patients —
-              sharing food, games and company on the ward.
+            <p className="mt-3 max-w-[40ch] text-sm leading-relaxed text-primary-foreground/90 sm:text-base">
+              From hospital wards to slum outreaches to family homes, our
+              volunteers show up in person — sharing food, care and company
+              wherever a community needs us.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Chapter 3 — Stats */}
-      <section className="flex min-h-[100svh] flex-col justify-center bg-accent px-4 py-20 text-primary-foreground sm:px-6">
+      {/* 3 — Stats */}
+      <section className="flex min-h-[100svh] flex-col justify-center bg-accent px-4 py-16 text-primary-foreground sm:px-6">
         <div className="mx-auto w-full max-w-2xl">
-          <p className="font-display text-sm italic text-primary-foreground/70">Chapter 03 — What it adds up to</p>
+          <p className="font-display text-base font-medium italic text-primary-foreground/80 sm:text-lg">What it adds up to</p>
           <div className="mt-6 grid gap-6">
             {STATS.map((stat) => (
               <div key={stat.label} className="flex items-baseline gap-4 border-b border-primary-foreground/20 pb-5">
@@ -123,11 +124,11 @@ function Index() {
         </div>
       </section>
 
-      {/* Chapter 4 — Who we are */}
-      <section className="flex min-h-[100svh] flex-col justify-center bg-primary px-4 py-20 text-primary-foreground sm:px-6">
+      {/* 4 — Who we are (org info) */}
+      <section className="flex min-h-[100svh] flex-col justify-center bg-primary px-4 py-16 text-primary-foreground sm:px-6">
         <div className="mx-auto grid w-full max-w-2xl gap-10">
           <div>
-            <p className="font-display text-sm italic text-primary-foreground/55">Chapter 04 — Who we are</p>
+            <p className="font-display text-base font-medium italic text-gold-soft sm:text-lg">Our story</p>
             <h2 className="mt-3 font-display text-3xl font-medium tracking-tight sm:text-4xl">
               Empowering children, adolescents, widows and youth
             </h2>
@@ -151,10 +152,10 @@ function Index() {
         </div>
       </section>
 
-      {/* Chapter 5 — Field notes gallery */}
-      <section className="flex min-h-[100svh] flex-col justify-center bg-secondary px-4 py-20 sm:px-6">
+      {/* 5 — Field notes gallery */}
+      <section className="flex min-h-[100svh] flex-col justify-center bg-secondary px-4 py-16 sm:px-6">
         <div className="mx-auto w-full max-w-2xl">
-          <p className="font-display text-sm italic text-accent">Chapter 05 — Recent outreach</p>
+          <p className="font-display text-base font-medium italic text-accent sm:text-lg">Recent outreach</p>
           <h2 className="mt-3 font-display text-3xl font-medium tracking-tight sm:text-4xl">Field notes</h2>
           <div className="mt-8 grid grid-cols-2 gap-3">
             {GALLERY.map((item) => (
@@ -175,10 +176,10 @@ function Index() {
         </div>
       </section>
 
-      {/* Chapter 6 — Programs */}
-      <section className="flex min-h-[100svh] flex-col justify-center bg-accent px-4 py-20 text-primary-foreground sm:px-6">
+      {/* 6 — Programs */}
+      <section className="flex min-h-[100svh] flex-col justify-center bg-accent px-4 py-16 text-primary-foreground sm:px-6">
         <div className="mx-auto w-full max-w-2xl">
-          <p className="font-display text-sm italic text-primary-foreground/70">Chapter 06 — Our core focus</p>
+          <p className="font-display text-base font-medium italic text-primary-foreground/80 sm:text-lg">Our core focus</p>
           <h2 className="mt-3 font-display text-3xl font-medium tracking-tight sm:text-4xl">Six threads of change</h2>
           <div className="mt-8 flex flex-col">
             {PROGRAMS.map((program) => {
@@ -208,10 +209,10 @@ function Index() {
         </div>
       </section>
 
-      {/* Chapter 7 — Final CTA */}
-      <section className="flex min-h-[100svh] flex-col items-center justify-center bg-foreground px-4 py-20 text-center text-background sm:px-6">
+      {/* 7 — Final CTA */}
+      <section className="flex min-h-[100svh] flex-col items-center justify-center bg-foreground px-4 py-16 text-center text-background sm:px-6">
         <div className="mx-auto w-full max-w-xl">
-          <p className="font-display text-sm italic text-background/60">Chapter 07 — Join the story</p>
+          <p className="font-display text-base font-medium italic text-background/70 sm:text-lg">Join the story</p>
           <h2 className="mx-auto mt-3 max-w-[16ch] font-display text-3xl font-medium italic tracking-tight sm:text-4xl">
             Every gift becomes a thread in someone's story
           </h2>
@@ -223,4 +224,4 @@ function Index() {
       </section>
     </>
   );
-}
+                          }

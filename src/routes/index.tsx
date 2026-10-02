@@ -109,14 +109,14 @@ function Index() {
       </section>
 
       {/* Chapter 3 — Stats */}
-      <section className="flex min-h-[100svh] flex-col justify-center px-4 py-20 sm:px-6">
+      <section className="flex min-h-[100svh] flex-col justify-center bg-accent px-4 py-20 text-primary-foreground sm:px-6">
         <div className="mx-auto w-full max-w-2xl">
-          <p className="font-display text-sm italic text-accent">Chapter 03 — What it adds up to</p>
+          <p className="font-display text-sm italic text-primary-foreground/70">Chapter 03 — What it adds up to</p>
           <div className="mt-6 grid gap-6">
             {STATS.map((stat) => (
-              <div key={stat.label} className="flex items-baseline gap-4 border-b border-border pb-5">
-                <span className="font-display text-4xl font-medium text-primary sm:text-5xl">{stat.value}</span>
-                <span className="text-sm text-muted-foreground">{stat.label}</span>
+              <div key={stat.label} className="flex items-baseline gap-4 border-b border-primary-foreground/20 pb-5">
+                <span className="font-display text-4xl font-medium sm:text-5xl">{stat.value}</span>
+                <span className="text-sm text-primary-foreground/80">{stat.label}</span>
               </div>
             ))}
           </div>
@@ -124,24 +124,24 @@ function Index() {
       </section>
 
       {/* Chapter 4 — Who we are */}
-      <section className="flex min-h-[100svh] flex-col justify-center bg-ivory-soft px-4 py-20 sm:px-6">
+      <section className="flex min-h-[100svh] flex-col justify-center bg-primary px-4 py-20 text-primary-foreground sm:px-6">
         <div className="mx-auto grid w-full max-w-2xl gap-10">
           <div>
-            <p className="font-display text-sm italic text-accent">Chapter 04 — Who we are</p>
+            <p className="font-display text-sm italic text-primary-foreground/55">Chapter 04 — Who we are</p>
             <h2 className="mt-3 font-display text-3xl font-medium tracking-tight sm:text-4xl">
               Empowering children, adolescents, widows and youth
             </h2>
-            <p className="mt-5 text-base leading-relaxed text-muted-foreground">
+            <p className="mt-5 text-base leading-relaxed text-primary-foreground/80">
               Registered on 12 November 2019 (Reg No: 80020002207879), SINZA is a
               women-led community-based organisation helping people develop
               healthier and more responsible lives.
             </p>
-            <Link to="/about" className="mt-5 inline-block text-sm font-bold text-primary no-underline hover:text-gold">
+            <Link to="/about" className="mt-5 inline-block text-sm font-bold text-gold-soft no-underline hover:text-gold">
               Read our full story →
             </Link>
           </div>
-          <div className="card-panel p-6 sm:p-8">
-            <p className="eyebrow">Our core values</p>
+          <div className="rounded-2xl border border-primary-foreground/20 bg-primary-foreground/10 p-6 sm:p-8">
+            <p className="text-xs font-bold uppercase tracking-[0.16em] text-gold-soft">Our core values</p>
             <ul className="mt-4 grid grid-cols-2 gap-4">
               {["Integrity", "Caring", "Collaboration", "Godliness"].map((v) => (
                 <li key={v} className="font-display text-xl font-medium tracking-tight">{v}</li>

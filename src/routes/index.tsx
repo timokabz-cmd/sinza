@@ -1,7 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 import heroImg from "@/assets/outreach/corsu/corsu-05-team.jpg";
-import storyImg from "@/assets/outreach/corsu/corsu-02-feeding.jpg";
+import corsuFeeding from "@/assets/outreach/corsu/corsu-02-feeding.jpg";
+import corsuPlaytable from "@/assets/outreach/corsu/corsu-01-playtable.jpg";
+import katoogoCommunity from "@/assets/outreach/katoogo/katoogo-04-community-gathering.jpg";
+import katoogoRice from "@/assets/outreach/katoogo/katoogo-01-rice-sacks.jpg";
+import sickleCellHome from "@/assets/outreach/sickle-cell/sicklecell-03-home-visit.jpg";
 import { PROGRAMS } from "@/lib/programs";
 
 export const Route = createFileRoute("/")({
@@ -32,13 +36,49 @@ const STATS = [
   { value: "10", label: "Children on education bursaries" },
 ];
 
-const FEATURED_PROGRAMS = PROGRAMS.slice(0, 3);
+const GALLERY = [
+  { src: katoogoCommunity, caption: "Katoogo, 2025", alt: "Families gathered at a Feed the Streets Foundation event in Katoogo" },
+  { src: corsuFeeding, caption: "CoRSU Hospital", alt: "A SINZA volunteer shares food with a mother and her baby at CoRSU Hospital" },
+  { src: sickleCellHome, caption: "Sickle Cell Foundation", alt: "A SINZA volunteer visiting a mother and her son, supported by the Sickle Cell Care Foundation" },
+  { src: katoogoRice, caption: "Food distribution", alt: "Sacks of rice ready for distribution to families in Katoogo" },
+];
+
+/** Programs 1, 2 and 5 have a real outreach photo available for the thumbnail. */
+const PROGRAM_THUMBS: Record<string, string> = {
+  "women-and-girl-empowerment": sickleCellHome,
+  "hiv-aids-prevention": corsuPlaytable,
+  "education-and-economic-empowerment": katoogoRice,
+};
 
 function Index() {
   return (
     <>
-      {/* Hero */}
-      <section className="relative isolate overflow-hidden">
+      {/* Chapter 1 — Hero */}
+      <section className="flex min-h-[100svh] flex-col justify-center bg-primary px-4 pb-16 pt-12 text-primary-foreground sm:px-6">
+        <div className="mx-auto w-full max-w-2xl">
+          <p className="font-display text-sm italic text-primary-foreground/55">Chapter 01 — Who we are</p>
+          <h1 className="mt-4 font-display text-4xl font-medium leading-[1.02] tracking-tight sm:text-6xl">
+            Improving lives.
+            <br />
+            Fulfilling purpose.
+          </h1>
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-primary-foreground/80 sm:text-lg">
+            SINZA Community Empowerment Mission touches lives through
+            transformational programmes that restore hope across Wakiso and
+            Kampala, Uganda.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link to="/donate" className="btn-gold">Donate now</Link>
+            <Link to="/apply" className="btn-outline-light">Apply for support</Link>
+          </div>
+        </div>
+        <p className="mx-auto mt-16 w-full max-w-2xl text-[11px] font-bold uppercase tracking-[0.12em] text-primary-foreground/45">
+          Scroll to continue ↓
+        </p>
+      </section>
+
+      {/* Chapter 2 — Photo takeover */}
+      <section className="relative isolate flex min-h-[100svh] items-end overflow-hidden">
         <img
           src={heroImg}
           alt="Two SINZA outreach volunteers in branded vests at CoRSU Hospital"
@@ -51,52 +91,46 @@ function Index() {
           className="absolute inset-0 -z-10"
           style={{
             background:
-              "linear-gradient(180deg, color-mix(in oklab, var(--emerald-deep) 78%, transparent) 0%, color-mix(in oklab, var(--emerald-deep) 55%, transparent) 45%, color-mix(in oklab, var(--emerald-deep) 88%, transparent) 100%)",
+              "linear-gradient(0deg, color-mix(in oklab, var(--emerald-deep) 90%, transparent) 0%, color-mix(in oklab, var(--emerald-deep) 10%, transparent) 55%, transparent 75%)",
           }}
         />
-        <div className="mx-auto max-w-6xl px-4 pb-20 pt-20 text-primary-foreground sm:px-6 sm:pb-28 sm:pt-28">
-          <div className="rise-in max-w-2xl">
-            <p className="eyebrow-on-photo">Women-led · Wakiso/Kampala, Uganda</p>
-            <h1 className="mt-4 font-display text-4xl font-medium leading-[1.08] tracking-tight sm:text-6xl">
-              Improving lives.
-              <br />
-              Fulfilling purpose.
-            </h1>
-            <div className="gold-rule mt-6" />
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-primary-foreground/80 sm:text-lg">
-              SINZA Community Empowerment Mission touches lives through
-              transformational programmes that restore hope and promote
-              healthy behaviours for body, mind and spirit.
+        <div className="w-full px-4 pb-10 pt-24 text-primary-foreground sm:px-6 sm:pb-14">
+          <div className="mx-auto max-w-2xl">
+            <p className="font-display text-sm italic text-primary-foreground/75">Chapter 02 — Where we work</p>
+            <h2 className="mt-2 max-w-[16ch] font-display text-2xl font-medium tracking-tight sm:text-4xl">
+              CoRSU Hospital, Kampala
+            </h2>
+            <p className="mt-3 max-w-[36ch] text-sm leading-relaxed text-primary-foreground/90 sm:text-base">
+              Alongside CoRSU's own staff, we spent the day with patients —
+              sharing food, games and company on the ward.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/donate" className="btn-gold">Donate now</Link>
-              <Link to="/apply" className="btn-outline-light">Apply for support</Link>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="bg-primary text-primary-foreground">
-        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-y-8 px-4 py-12 sm:grid-cols-4 sm:px-6 sm:py-14">
-          {STATS.map((stat) => (
-            <div key={stat.label} className="px-2 text-center sm:px-4">
-              <p className="font-display text-3xl font-medium tracking-tight text-gold-soft sm:text-4xl">{stat.value}</p>
-              <p className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-primary-foreground/60">{stat.label}</p>
-            </div>
-          ))}
+      {/* Chapter 3 — Stats */}
+      <section className="flex min-h-[100svh] flex-col justify-center px-4 py-20 sm:px-6">
+        <div className="mx-auto w-full max-w-2xl">
+          <p className="font-display text-sm italic text-accent">Chapter 03 — What it adds up to</p>
+          <div className="mt-6 grid gap-6">
+            {STATS.map((stat) => (
+              <div key={stat.label} className="flex items-baseline gap-4 border-b border-border pb-5">
+                <span className="font-display text-4xl font-medium text-primary sm:text-5xl">{stat.value}</span>
+                <span className="text-sm text-muted-foreground">{stat.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Who we are */}
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
-        <div className="grid gap-10 sm:grid-cols-2">
+      {/* Chapter 4 — Who we are */}
+      <section className="flex min-h-[100svh] flex-col justify-center bg-ivory-soft px-4 py-20 sm:px-6">
+        <div className="mx-auto grid w-full max-w-2xl gap-10">
           <div>
-            <p className="eyebrow">Who we are</p>
+            <p className="font-display text-sm italic text-accent">Chapter 04 — Who we are</p>
             <h2 className="mt-3 font-display text-3xl font-medium tracking-tight sm:text-4xl">
               Empowering children, adolescents, widows and youth
             </h2>
-            <div className="gold-rule mt-5" />
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
               Registered on 12 November 2019 (Reg No: 80020002207879), SINZA is a
               women-led community-based organisation helping people develop
@@ -117,73 +151,72 @@ function Index() {
         </div>
       </section>
 
-      {/* Featured programs */}
-      <section className="bg-ivory-soft">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div className="max-w-2xl">
-              <p className="eyebrow">Our core focus</p>
-              <h2 className="mt-3 font-display text-3xl font-medium tracking-tight sm:text-4xl">Five threads of change</h2>
-              <div className="gold-rule mt-5" />
-            </div>
-            <Link to="/programs" className="hidden text-sm font-bold text-primary no-underline hover:text-gold sm:inline-block">
-              View all programmes →
-            </Link>
-          </div>
-          <div className="mt-10 grid gap-6 sm:grid-cols-3">
-            {FEATURED_PROGRAMS.map((program) => (
-              <Link
-                key={program.slug}
-                to="/programs/$slug"
-                params={{ slug: program.slug }}
-                className="card-panel block p-6 no-underline sm:p-8"
-              >
-                <p className="font-display text-3xl font-medium text-gold">{program.number}</p>
-                <h3 className="mt-3 font-display text-xl font-medium tracking-tight text-foreground">{program.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{program.shortBody}</p>
-              </Link>
+      {/* Chapter 5 — Field notes gallery */}
+      <section className="flex min-h-[100svh] flex-col justify-center bg-secondary px-4 py-20 sm:px-6">
+        <div className="mx-auto w-full max-w-2xl">
+          <p className="font-display text-sm italic text-accent">Chapter 05 — Recent outreach</p>
+          <h2 className="mt-3 font-display text-3xl font-medium tracking-tight sm:text-4xl">Field notes</h2>
+          <div className="mt-8 grid grid-cols-2 gap-3">
+            {GALLERY.map((item) => (
+              <div key={item.caption} className="relative overflow-hidden rounded-2xl">
+                <img src={item.src} alt={item.alt} loading="lazy" className="h-40 w-full object-cover sm:h-48" />
+                <div
+                  className="absolute inset-x-0 bottom-0 px-3 py-2 text-[11px] font-bold text-white"
+                  style={{ background: "linear-gradient(0deg, color-mix(in oklab, var(--emerald-deep) 85%, transparent), transparent)" }}
+                >
+                  {item.caption}
+                </div>
+              </div>
             ))}
           </div>
-          <Link to="/programs" className="mt-8 inline-block text-sm font-bold text-primary no-underline hover:text-gold sm:hidden">
-            View all programmes →
+          <Link to="/impact" className="mt-6 inline-block text-sm font-bold text-primary no-underline hover:text-gold">
+            See our full impact →
           </Link>
         </div>
       </section>
 
-      {/* One story */}
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
-        <div className="grid items-center gap-8 sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] sm:gap-12">
-          <img src={storyImg} alt="A SINZA volunteer sharing food with a mother and her baby at CoRSU Hospital" loading="lazy" width={1080} height={720} className="aspect-square w-full rounded-3xl object-cover shadow-xl" />
-          <div className="min-w-0">
-            <p className="eyebrow">Why our work matters</p>
-            <h2 className="mt-3 font-display text-3xl font-medium tracking-tight sm:text-4xl">Lived evidence</h2>
-            <div className="gold-rule mt-5" />
-            <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-              A young mother received brief nutrition education and healthy
-              groceries — and her infant's health turned around within weeks.
-              It's a small story, but it's one of dozens like it across the
-              communities we serve.
-            </p>
-            <Link to="/impact" className="mt-5 inline-block text-sm font-bold text-primary no-underline hover:text-gold">
-              See our full impact →
-            </Link>
+      {/* Chapter 6 — Programs */}
+      <section className="flex min-h-[100svh] flex-col justify-center bg-accent px-4 py-20 text-primary-foreground sm:px-6">
+        <div className="mx-auto w-full max-w-2xl">
+          <p className="font-display text-sm italic text-primary-foreground/70">Chapter 06 — Our core focus</p>
+          <h2 className="mt-3 font-display text-3xl font-medium tracking-tight sm:text-4xl">Six threads of change</h2>
+          <div className="mt-8 flex flex-col">
+            {PROGRAMS.map((program) => {
+              const thumb = PROGRAM_THUMBS[program.slug];
+              return (
+                <Link
+                  key={program.slug}
+                  to="/programs/$slug"
+                  params={{ slug: program.slug }}
+                  className="flex items-center gap-4 border-t border-primary-foreground/20 py-4 no-underline last:border-b"
+                >
+                  {thumb ? (
+                    <img src={thumb} alt="" className="size-12 shrink-0 rounded-xl object-cover" />
+                  ) : (
+                    <span className="flex size-12 shrink-0 items-center justify-center rounded-xl bg-primary-foreground/15 font-display text-sm italic text-primary-foreground/70">
+                      {program.number}
+                    </span>
+                  )}
+                  <div className="min-w-0">
+                    <p className="font-display text-base font-semibold tracking-tight">{program.title}</p>
+                    <p className="mt-0.5 text-xs text-primary-foreground/75">{program.shortBody}</p>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-primary text-primary-foreground">
-        <div className="mx-auto max-w-6xl px-4 py-16 text-center sm:px-6 sm:py-20">
-          <p className="eyebrow">Upcoming · November 2026</p>
-          <h2 className="mx-auto mt-3 max-w-2xl font-display text-3xl font-medium tracking-tight sm:text-4xl">
-            Community outreach in Matugga
+      {/* Chapter 7 — Final CTA */}
+      <section className="flex min-h-[100svh] flex-col items-center justify-center bg-foreground px-4 py-20 text-center text-background sm:px-6">
+        <div className="mx-auto w-full max-w-xl">
+          <p className="font-display text-sm italic text-background/60">Chapter 07 — Join the story</p>
+          <h2 className="mx-auto mt-3 max-w-[16ch] font-display text-3xl font-medium italic tracking-tight sm:text-4xl">
+            Every gift becomes a thread in someone's story
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-primary-foreground/70">
-            Give, volunteer or partner with us to make our next outreach reach
-            even more women and children.
-          </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <Link to="/donate" className="btn-gold">Donate</Link>
+            <Link to="/donate" className="btn-gold">Donate now</Link>
             <Link to="/partner" className="btn-outline-light">Partner with us</Link>
           </div>
         </div>

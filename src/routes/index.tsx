@@ -54,8 +54,8 @@ function Index() {
   return (
     <>
       {/* 1 — Hero */}
-      <section className="flex min-h-[100svh] flex-col bg-primary px-4 py-12 text-primary-foreground sm:px-6 sm:py-16">
-        <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col justify-center">
+      <section className="flex min-h-[100svh] flex-col justify-center bg-primary px-4 py-16 text-primary-foreground sm:px-6">
+        <div className="mx-auto w-full max-w-2xl">
           <p className="font-display text-base font-medium italic text-gold-soft sm:text-lg">Who we are</p>
           <h1 className="mt-4 font-display text-4xl font-medium leading-[1.02] tracking-tight sm:text-6xl">
             Improving lives.
@@ -71,14 +71,14 @@ function Index() {
             <Link to="/donate" className="btn-gold">Donate now</Link>
             <Link to="/apply" className="btn-outline-light">Apply for support</Link>
           </div>
+          <p className="mt-12 text-[11px] font-bold uppercase tracking-[0.12em] text-primary-foreground/45">
+            Scroll to continue ↓
+          </p>
         </div>
-        <p className="mx-auto w-full max-w-2xl text-[11px] font-bold uppercase tracking-[0.12em] text-primary-foreground/45">
-          Scroll to continue ↓
-        </p>
       </section>
 
       {/* 2 — Photo takeover */}
-      <section className="relative isolate flex min-h-[100svh] items-end overflow-hidden">
+      <section className="relative isolate flex min-h-[70svh] items-end overflow-hidden sm:min-h-[85svh]">
         <img
           src={heroImg}
           alt="Two SINZA outreach volunteers in branded vests at CoRSU Hospital"
@@ -110,7 +110,7 @@ function Index() {
       </section>
 
       {/* 3 — Stats */}
-      <section className="flex min-h-[100svh] flex-col justify-center bg-accent px-4 py-16 text-primary-foreground sm:px-6">
+      <section className="bg-accent px-4 py-16 text-primary-foreground sm:px-6 sm:py-20">
         <div className="mx-auto w-full max-w-2xl">
           <p className="font-display text-base font-medium italic text-primary-foreground/80 sm:text-lg">What it adds up to</p>
           <div className="mt-6 grid gap-6">
@@ -125,7 +125,7 @@ function Index() {
       </section>
 
       {/* 4 — Who we are (org info) */}
-      <section className="flex min-h-[100svh] flex-col justify-center bg-primary px-4 py-16 text-primary-foreground sm:px-6">
+      <section className="bg-primary px-4 py-16 text-primary-foreground sm:px-6 sm:py-20">
         <div className="mx-auto grid w-full max-w-2xl gap-10">
           <div>
             <p className="font-display text-base font-medium italic text-gold-soft sm:text-lg">Our story</p>
@@ -153,7 +153,7 @@ function Index() {
       </section>
 
       {/* 5 — Field notes gallery */}
-      <section className="flex min-h-[100svh] flex-col justify-center bg-secondary px-4 py-16 sm:px-6">
+      <section className="bg-secondary px-4 py-16 sm:px-6 sm:py-20">
         <div className="mx-auto w-full max-w-2xl">
           <p className="font-display text-base font-medium italic text-accent sm:text-lg">Recent outreach</p>
           <h2 className="mt-3 font-display text-3xl font-medium tracking-tight sm:text-4xl">Field notes</h2>
@@ -177,7 +177,7 @@ function Index() {
       </section>
 
       {/* 6 — Programs */}
-      <section className="flex min-h-[100svh] flex-col justify-center bg-accent px-4 py-16 text-primary-foreground sm:px-6">
+      <section className="bg-accent px-4 py-16 text-primary-foreground sm:px-6 sm:py-20">
         <div className="mx-auto w-full max-w-2xl">
           <p className="font-display text-base font-medium italic text-primary-foreground/80 sm:text-lg">Our core focus</p>
           <h2 className="mt-3 font-display text-3xl font-medium tracking-tight sm:text-4xl">Six threads of change</h2>
@@ -210,7 +210,7 @@ function Index() {
       </section>
 
       {/* 7 — Final CTA */}
-      <section className="flex min-h-[100svh] flex-col items-center justify-center bg-foreground px-4 py-16 text-center text-background sm:px-6">
+      <section className="flex min-h-[60svh] flex-col items-center justify-center bg-foreground px-4 py-16 text-center text-background sm:px-6">
         <div className="mx-auto w-full max-w-xl">
           <p className="font-display text-base font-medium italic text-background/70 sm:text-lg">Join the story</p>
           <h2 className="mx-auto mt-3 max-w-[16ch] font-display text-3xl font-medium italic tracking-tight sm:text-4xl">
@@ -224,4 +224,4 @@ function Index() {
       </section>
     </>
   );
-                          }
+}

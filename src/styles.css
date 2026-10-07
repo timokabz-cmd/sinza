@@ -273,4 +273,60 @@
     opacity: 1;
     transform: none;
   }
-    }
+}
+
+/* Auto-sliding photo gallery (homepage "Where we work" chapter) */
+@utility slide-fade {
+  opacity: 0;
+  animation: sinza-slide-fade 16s infinite;
+}
+
+@keyframes sinza-slide-fade {
+  0% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+  22% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@utility dot-cycle {
+  animation: sinza-dot-cycle 16s infinite;
+}
+
+@keyframes sinza-dot-cycle {
+  0% {
+    background-color: var(--primary-foreground);
+    opacity: 0.35;
+    width: 0.375rem;
+  }
+  3% {
+    background-color: var(--gold-soft);
+    opacity: 1;
+    width: 1.25rem;
+  }
+  22% {
+    background-color: var(--gold-soft);
+    opacity: 1;
+    width: 1.25rem;
+  }
+  25% {
+    background-color: var(--primary-foreground);
+    opacity: 0.35;
+    width: 0.375rem;
+  }
+  100% {
+    background-color: var(--primary-foreground);
+    opacity: 0.35;
+    width: 0.375rem;
+  }
+}

@@ -81,7 +81,7 @@ function Index() {
   return (
     <>
       {/* 1 — Hero */}
-      <section className="flex min-h-[88svh] flex-col justify-center bg-primary px-4 py-12 text-primary-foreground sm:min-h-[92svh] sm:px-6 sm:py-16">
+      <section className="flex min-h-fit flex-col justify-center bg-primary px-4 py-12 text-primary-foreground sm:px-6 sm:py-16">
         <div className="mx-auto w-full max-w-2xl">
           <p className="font-display text-base font-medium italic text-gold-soft sm:text-lg">Who we are</p>
           <h1 className="mt-4 font-display text-4xl font-medium leading-[1.02] tracking-tight sm:text-6xl">
@@ -284,4 +284,4 @@ function Index() {
       </section>
     </>
   );
-      }
+        }

@@ -10,11 +10,14 @@ import corsuPlayMat from "@/assets/outreach/corsu/corsu-04-play-mat.jpg";
 import corsuTeam from "@/assets/outreach/corsu/corsu-05-team.jpg";
 import katoogoRiceSacks from "@/assets/outreach/katoogo/katoogo-01-rice-sacks.jpg";
 import sickleCellHomeVisit from "@/assets/outreach/sickle-cell/sicklecell-03-home-visit.jpg";
+import educationMakerere from "@/assets/outreach/education/makerere_university.jpg";
 
 const IMAGES = {
   feeding: katoogoRiceSacks,
   capital: capitalImg,
   story: sickleCellHomeVisit,
+  education: educationMakerere,
+  health: katoogoRiceSacks,
 };
 
 /** Real outreach photo galleries, keyed by programme slug. */
@@ -93,6 +96,22 @@ function ProgramDetail() {
                 </li>
               ))}
             </ul>
+
+            {program.youtubeId && (
+              <div className="mt-8">
+                <p className="eyebrow">Watch</p>
+                <div className="mt-3 aspect-video w-full max-w-sm overflow-hidden rounded-2xl shadow-xl">
+                  <iframe
+                    src={`https://www.youtube-nocookie.com/embed/${program.youtubeId}`}
+                    title={`${program.title} video`}
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    className="h-full w-full border-0"
+                  />
+                </div>
+              </div>
+            )}
           </div>
           {image && (
             <img
@@ -162,4 +181,4 @@ function ProgramDetail() {
       </section>
     </>
   );
-        }
+                    }

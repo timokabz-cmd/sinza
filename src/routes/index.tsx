@@ -94,11 +94,29 @@ function Index() {
             transformational programmes that restore hope across Wakiso and
             Kampala, Uganda.
           </p>
+
+          <div className="mt-7 flex items-center gap-4">
+            <div className="h-[92px] w-[92px] shrink-0 overflow-hidden rounded-2xl border-2 border-primary-foreground/15 shadow-lg">
+              <img
+                src={sickleCellHome}
+                alt="A SINZA volunteer visiting a family supported by the Sickle Cell Care Foundation"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="h-full w-px self-stretch bg-primary-foreground/20" />
+            <div>
+              <p className="font-display text-3xl font-medium leading-none text-primary-foreground sm:text-4xl">5,000+</p>
+              <p className="mt-1 max-w-[7.5rem] text-[11.5px] leading-tight text-primary-foreground/65">
+                Women &amp; girls empowered since 2019
+              </p>
+            </div>
+          </div>
+
           <div className="mt-8 flex flex-wrap gap-3">
             <Link to="/donate" className="btn-gold">Donate now</Link>
             <Link to="/apply" className="btn-outline-light">Apply for support</Link>
           </div>
-          <p className="mt-12 text-[11px] font-bold uppercase tracking-[0.12em] text-primary-foreground/45">
+          <p className="mt-9 text-[11px] font-bold uppercase tracking-[0.12em] text-primary-foreground/45">
             Scroll to continue ↓
           </p>
         </div>
@@ -266,4 +284,4 @@ function Index() {
       </section>
     </>
   );
-   }
+                  }

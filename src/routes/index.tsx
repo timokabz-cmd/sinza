@@ -6,6 +6,7 @@ import corsuWard from "@/assets/outreach/corsu/corsu-03-ward-visit.jpg";
 import katoogoCommunity from "@/assets/outreach/katoogo/katoogo-04-community-gathering.jpg";
 import katoogoRice from "@/assets/outreach/katoogo/katoogo-01-rice-sacks.jpg";
 import sickleCellHome from "@/assets/outreach/sickle-cell/sicklecell-03-home-visit.jpg";
+import educationMakerere from "@/assets/outreach/education/makerere_university.jpg";
 import { PROGRAMS } from "@/lib/programs";
 
 export const Route = createFileRoute("/")({
@@ -70,11 +71,12 @@ const GALLERY = [
   { src: katoogoRice, caption: "Food distribution", alt: "Sacks of rice ready for distribution to families in Katoogo" },
 ];
 
-/** Programs 1, 2 and 5 have a real outreach photo available for the thumbnail. */
+/** Programs with a real outreach photo available for the thumbnail. */
 const PROGRAM_THUMBS: Record<string, string> = {
   "women-and-girl-empowerment": sickleCellHome,
   "hiv-aids-prevention": corsuPlaytable,
-  "education-and-economic-empowerment": katoogoRice,
+  "education-and-economic-empowerment": educationMakerere,
+  "health-and-emergency-response": katoogoRice,
 };
 
 function Index() {
@@ -284,4 +286,4 @@ function Index() {
       </section>
     </>
   );
-        }
+}

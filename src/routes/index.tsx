@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-import heroImg from "@/assets/outreach/corsu/corsu-05-team.jpg";
 import corsuFeeding from "@/assets/outreach/corsu/corsu-02-feeding.jpg";
 import corsuPlaytable from "@/assets/outreach/corsu/corsu-01-playtable.jpg";
+import corsuWard from "@/assets/outreach/corsu/corsu-03-ward-visit.jpg";
 import katoogoCommunity from "@/assets/outreach/katoogo/katoogo-04-community-gathering.jpg";
 import katoogoRice from "@/assets/outreach/katoogo/katoogo-01-rice-sacks.jpg";
 import sickleCellHome from "@/assets/outreach/sickle-cell/sicklecell-03-home-visit.jpg";
@@ -34,6 +34,33 @@ const STATS = [
   { value: "7", label: "Communities reached" },
   { value: "50+", label: "Women trained in financial literacy" },
   { value: "10", label: "Children on education bursaries" },
+];
+
+const SLIDES = [
+  {
+    src: corsuPlaytable,
+    place: "CoRSU Hospital",
+    caption: "Play therapy with children on the ward",
+    alt: "A SINZA volunteer doing play therapy with children at CoRSU Hospital",
+  },
+  {
+    src: sickleCellHome,
+    place: "Sickle Cell Care Foundation",
+    caption: "A home visit to check in on a family",
+    alt: "A SINZA volunteer visiting a mother and her son, supported by the Sickle Cell Care Foundation",
+  },
+  {
+    src: katoogoCommunity,
+    place: "Feed the Streets, Katoogo",
+    caption: "Community gathered for outreach day",
+    alt: "Families gathered at a Feed the Streets Foundation event in Katoogo",
+  },
+  {
+    src: corsuWard,
+    place: "CoRSU Hospital",
+    caption: "Delivering supplies to patients on the ward",
+    alt: "A SINZA volunteer delivering supplies to a patient at CoRSU Hospital",
+  },
 ];
 
 const GALLERY = [
@@ -77,34 +104,49 @@ function Index() {
         </div>
       </section>
 
-      {/* 2 — Photo takeover */}
-      <section className="relative isolate flex min-h-[70svh] items-end overflow-hidden sm:min-h-[85svh]">
-        <img
-          src={heroImg}
-          alt="Two SINZA outreach volunteers in branded vests at CoRSU Hospital"
-          width={1080}
-          height={720}
-          className="absolute inset-0 -z-10 h-full w-full object-cover"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 -z-10"
-          style={{
-            background:
-              "linear-gradient(0deg, color-mix(in oklab, var(--emerald-deep) 90%, transparent) 0%, color-mix(in oklab, var(--emerald-deep) 10%, transparent) 55%, transparent 75%)",
-          }}
-        />
-        <div className="w-full px-4 pb-10 pt-24 text-primary-foreground sm:px-6 sm:pb-14">
-          <div className="mx-auto max-w-2xl">
-            <p className="font-display text-base font-medium italic text-gold-soft sm:text-lg">Where we work</p>
-            <h2 className="mt-2 max-w-[20ch] font-display text-2xl font-medium tracking-tight sm:text-4xl">
-              Wakiso and Kampala, one community at a time
-            </h2>
-            <p className="mt-3 max-w-[40ch] text-sm leading-relaxed text-primary-foreground/90 sm:text-base">
-              From hospital wards to slum outreaches to family homes, our
-              volunteers show up in person — sharing food, care and company
-              wherever a community needs us.
-            </p>
+      {/* 2 — Where we work + sliding gallery */}
+      <section className="bg-primary px-4 pb-0 pt-16 text-primary-foreground sm:px-6 sm:pt-20">
+        <div className="mx-auto w-full max-w-2xl">
+          <p className="font-display text-base font-medium italic text-gold-soft sm:text-lg">Where we work</p>
+          <h2 className="mt-2 max-w-[20ch] font-display text-2xl font-medium tracking-tight sm:text-4xl">
+            Wakiso and Kampala, one community at a time
+          </h2>
+          <p className="mt-3 max-w-[40ch] text-sm leading-relaxed text-primary-foreground/90 sm:text-base">
+            From hospital wards to slum outreaches to family homes, our
+            volunteers show up in person — sharing food, care and company
+            wherever a community needs us.
+          </p>
+        </div>
+        <div className="relative isolate mt-8 h-[60svh] w-full overflow-hidden sm:h-[70svh]">
+          {SLIDES.map((slide, i) => (
+            <div
+              key={slide.caption}
+              className="slide-fade absolute inset-0"
+              style={{ animationDelay: `${i * 4}s` }}
+            >
+              <img src={slide.src} alt={slide.alt} loading="lazy" className="h-full w-full object-cover" />
+              <div
+                aria-hidden="true"
+                className="absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(0deg, color-mix(in oklab, var(--emerald-deep) 88%, transparent) 0%, color-mix(in oklab, var(--emerald-deep) 10%, transparent) 55%, transparent 75%)",
+                }}
+              />
+              <div className="absolute inset-x-4 bottom-5 sm:inset-x-6 sm:bottom-7">
+                <p className="font-display text-sm font-medium italic text-gold-soft">{slide.place}</p>
+                <h3 className="mt-1 font-display text-lg font-medium tracking-tight sm:text-xl">{slide.caption}</h3>
+              </div>
+            </div>
+          ))}
+          <div className="absolute bottom-5 right-4 z-10 flex gap-1.5 sm:right-6">
+            {SLIDES.map((slide, i) => (
+              <span
+                key={slide.caption}
+                className="dot-cycle h-1.5 w-1.5 rounded-full bg-primary-foreground/35"
+                style={{ animationDelay: `${i * 4}s` }}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -224,4 +266,4 @@ function Index() {
       </section>
     </>
   );
-}
+   }

@@ -11,10 +11,12 @@ export type Program = {
   heroBody: string;
   details: string[];
   /** Placeholder image key — swap for a real photo import once available. */
-  imageKey: "feeding" | "capital" | "story" | null;
+  imageKey: "feeding" | "capital" | "story" | "education" | "health" | null;
   /** Real outreach photos for this programme, set from src/routes/programs/$slug.tsx. */
   gallery?: GalleryImage[];
   galleryCaption?: string;
+  /** Optional YouTube video id to embed on this programme's page. */
+  youtubeId?: string;
 };
 
 export const PROGRAMS: Program[] = [
@@ -92,7 +94,7 @@ export const PROGRAMS: Program[] = [
       "Support that follows a child through multiple terms, not just a single payment.",
       "Pathways connecting graduating youth to further training or employment.",
     ],
-    imageKey: "feeding",
+    imageKey: "education",
   },
   {
     slug: "health-and-emergency-response",
@@ -107,8 +109,9 @@ export const PROGRAMS: Program[] = [
       "Practical help with essentials during hospital stays and recovery.",
       "Ongoing follow-up after the emergency has passed, so support doesn't end too soon.",
     ],
-    imageKey: null,
+    imageKey: "health",
     galleryCaption: "Responding to a mother of quadruplets in Mbale",
+    youtubeId: "REPLACE_WITH_YOUTUBE_ID",
   },
 ];
 
